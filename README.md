@@ -8,9 +8,10 @@ Boilerplate for using ES6 modules into a client-side executable code either w/ o
  - [x] Use `.mjs` as an extension of the module files
  - [x] `React` and `ReactDOM` must be loaded as static scripts on the page instead of including them into the modules
  - [x] All React components must be rendered when the `DOMContentLoaded` event was being fired
- - [ ] Watch `.mjs` files for changes and transpile them realtime
+ - [x] Watch `.mjs` files for changes and transpile them realtime
  - [x] Enable sourcemaps (if possible)
  - [ ] Give an opportunity to use `npm` modules on the client-side
 
 # How to use
  - Run `npm run build` to create the initial modules bundle
+ - Run `npm start` to start the development environment

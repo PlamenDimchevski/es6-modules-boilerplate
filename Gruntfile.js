@@ -4,14 +4,26 @@ module.exports = ( grunt ) => {
    // Load NPM tasks
    [
       'grunt-babel',
+      'grunt-contrib-watch-chokidar',
       'grunt-webpack',
    ].forEach( grunt.loadNpmTasks.bind( grunt ) );
 
    // Init congiguration
    grunt.initConfig({
+      watchChokidar : {
+         options: {
+            spawn         : false,
+            interval      : 100,
+            debounceDelay : 1000,
+         },
+         files : [
+            './src/**/*.mjs',
+         ],
+         tasks : [ 'webpack' ],
+      },
       webpack : {
          myConfig : {
-            mode   : 'production',   // production | development
+            mode   : process.env.NODE_ENV || 'development',
             entry  : {
                app     : './src/index.mjs',
                rte     : './src/elements/rte/index.mjs',
@@ -25,6 +37,7 @@ module.exports = ( grunt ) => {
             module : {
                rules : [
                   {
+                     // TODO: test for either .jsx or .mjsx files as well? /\.(mjs|jsx)$/
                      test    : /\.mjs$/,
                      exclude : /node_modules/,
                      use     : [ 'babel-loader' ],
@@ -36,5 +49,6 @@ module.exports = ( grunt ) => {
    });
 
    // A very basic default task.
-   grunt.registerTask( 'default', 'Bundle the ES6 modules.', [ 'webpack' ] );
+   grunt.registerTask( 'build', 'Bundle the ES6 modules.', [ 'webpack' ] );
+   grunt.registerTask( 'watch', 'Watching for changes and bundle the ES6 modules realtime.', [ 'webpack', 'watchChokidar' ] );
 }
