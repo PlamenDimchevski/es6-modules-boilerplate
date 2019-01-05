@@ -11,10 +11,14 @@ module.exports = ( grunt ) => {
    grunt.initConfig({
       webpack : {
          myConfig : {
-            mode   : 'development',   // production | development
-            entry  : './src/index.mjs',
+            mode   : 'production',   // production | development
+            entry  : {
+               app     : './src/index.mjs',
+               rte     : './src/elements/rte/index.mjs',
+               gallery : './src/elements/gallery/index.mjs',
+            },
             output : {
-               filename : 'app.js',
+               filename : '[name].bundle.js',
                path     : path.resolve( __dirname, 'build' )
             },
             devtool : 'source-map',

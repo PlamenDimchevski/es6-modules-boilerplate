@@ -5,7 +5,7 @@ import App from './components/App.mjs';
 moduleA();
 moduleB();
 
-domreadypromise.then( () => {
+SK.domreadypromise.then( () => {
    ReactDOM.render(
       <App/>,
       document.getElementById( 'root' ),

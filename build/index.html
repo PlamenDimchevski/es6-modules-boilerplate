@@ -7,7 +7,39 @@
    </head>
    <body>
       <div id="root"></div>
-      <script src="app.js"></script>
+      <script src="app.bundle.js"></script>
+      <!-- Load and render the RTE element -->
+      <div id="rte"></div>
+      <script src="rte.bundle.js"></script>
+      <script type="text/javascript">
+         SK.domreadypromise.then( () => {
+            ReactDOM.render(
+               React.createElement(
+                  SK.RTE,
+                  {
+                     content : 'Hello from the RTE component!',
+                  }
+               ),
+               document.getElementById( 'rte' )
+            );
+         });
+      </script>
+      <!-- Load and render the Gallery element -->
+      <div id="gallery"></div>
+      <script src="gallery.bundle.js"></script>
+      <script type="text/javascript">
+         SK.domreadypromise.then( () => {
+            ReactDOM.render(
+               React.createElement(
+                  SK.Gallery,
+                  {
+                     content : 'Hello from the Gallery component!',
+                  }
+               ),
+               document.getElementById( 'gallery' )
+            );
+         });
+      </script>
       <script type="text/javascript" src="https://unpkg.com/react-dom@next/umd/react-dom.production.min.js" defer></script>
    </body>
 </html>
