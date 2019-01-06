@@ -45,6 +45,11 @@ module.exports = ( grunt ) => {
             },
             devtool : 'source-map',
             watch : process.env.NODE_ENV != 'production',
+            devServer : {
+               contentBase : 'build',
+               port : 9999,
+               keepAlive : true
+            },
             module : {
                rules : [
                   {
