@@ -1,5 +1,6 @@
 import moduleA from './a.mjs';
 import moduleB from './b.mjs';
+import c from './c.js';
 import App from './components/App.mjs';
 
 moduleA();

@@ -11,6 +11,8 @@ Boilerplate for using ES6 modules into a client-side executable code either w/ o
  - [x] Watch `.mjs` files for changes and transpile them realtime
  - [x] Enable sourcemaps (if possible)
  - [ ] Give an opportunity to use `npm` modules on the client-side
+ - [ ] Bundles should be able to be executed on the server-side (Node.js)
+ - [ ] Think about including linter, CSS styles loader
 
 # How to use
  - Run `npm run build` to create the initial modules bundle

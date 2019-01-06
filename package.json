@@ -4,8 +4,9 @@
   "description": "Boilerplate for using ES6 modules into a client-side executable code either w/ or w/o bundling",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV='production' grunt build",
-    "start": "NODE_ENV='development' grunt watch"
+    "build": "NODE_ENV='production' npx grunt build",
+    "start": "NODE_ENV='development' npx grunt watch",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
