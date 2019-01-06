@@ -1,4 +1,5 @@
 const path = require( 'path' );
+const BUNDLE_EXT = '.bundle.js';
 
 module.exports = ( grunt ) => {
    // Load NPM tasks
@@ -24,7 +25,7 @@ module.exports = ( grunt ) => {
             debounceDelay : 1000,
          },
          files : [
-            './build/**/*.bundle.js',
+            `./build/**/*${BUNDLE_EXT}`,
          ],
          tasks : [
             // TODO: Run concat task
@@ -39,7 +40,7 @@ module.exports = ( grunt ) => {
                gallery : './src/elements/gallery/index.mjs',
             },
             output : {
-               filename : '[name].bundle.js',
+               filename : `[name]${BUNDLE_EXT}`,
                path     : path.resolve( __dirname, 'build' )
             },
             devtool : 'source-map',
