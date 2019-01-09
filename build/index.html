@@ -3,14 +3,17 @@
    <head>
       <title>Hello ES6 Modules</title>
       <script type="text/javascript" src="https://unpkg.com/react@next/umd/react.production.min.js"></script>
-      <script src="core.js"></script>
+      <script src="./../src/skcore.js"></script>
+      <script src="./sklibrary.bundle.js"></script>
    </head>
    <body>
       <div id="root"></div>
-      <script src="app.bundle.js"></script>
+      <script src="./rte.bundle.js"></script>
+      <script src="./gallery.bundle.js"></script>
+      <script src="./form.bundle.js"></script>
       <!-- Load and render the RTE element -->
       <div id="rte"></div>
-      <script src="rte.bundle.js"></script>
+      <div id="rte2"></div>
       <script type="text/javascript">
          SK.domreadypromise.then( () => {
             ReactDOM.render(
@@ -20,13 +23,13 @@
                      content : 'Hello from the RTE component!',
                   }
                ),
-               document.getElementById( 'rte' )
+               document.getElementById( 'rte2' )
             );
          });
       </script>
       <!-- Load and render the Gallery element -->
       <div id="gallery"></div>
-      <script src="gallery.bundle.js"></script>
+      <div id="gallery2"></div>
       <script type="text/javascript">
          SK.domreadypromise.then( () => {
             ReactDOM.render(
@@ -36,10 +39,12 @@
                      content : 'Hello from the Gallery component!',
                   }
                ),
-               document.getElementById( 'gallery' )
+               document.getElementById( 'gallery2' )
             );
          });
       </script>
+      <div id="form"></div>
       <script type="text/javascript" src="https://unpkg.com/react-dom@next/umd/react-dom.production.min.js" defer></script>
+      <script src="./main.bundle.js" defer></script>
    </body>
 </html>

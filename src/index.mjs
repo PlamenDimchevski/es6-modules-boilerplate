@@ -1,17 +1,42 @@
-import moduleA from './a.mjs';
-import moduleB from './b.mjs';
-import c from './c.js';
-import App from './components/App.mjs';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-moduleA();
-moduleB();
+import RTE from './elements/rte';
+import Gallery from './elements/gallery';
+import Form from './elements/form';
 
 SK.domreadypromise.then( () => {
    ReactDOM.render(
-      <App/>,
-      document.getElementById( 'root' ),
-      () => {
-         console.log( '>>> App rendered/updated' );
-      }
+      React.createElement(
+         RTE,
+         {
+            content : 'Hello from the RTE component!',
+         }
+      ),
+      document.getElementById( 'rte' )
+   );
+});
+
+SK.domreadypromise.then( () => {
+   ReactDOM.render(
+      React.createElement(
+         Gallery,
+         {
+            content : 'Hello from the Gallery component!',
+         }
+      ),
+      document.getElementById( 'gallery' )
+   );
+});
+
+SK.domreadypromise.then( () => {
+   ReactDOM.render(
+      React.createElement(
+         Form,
+         {
+            content : 'Hello from the Form component!',
+         }
+      ),
+      document.getElementById( 'form' )
    );
 });
