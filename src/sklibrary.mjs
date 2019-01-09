@@ -1,4 +1,5 @@
 // import { new module when needed and when is rewrited }
+import z, { component } from './a';
 
 export const addm = ( a, b ) => a + b;
 

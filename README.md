@@ -13,6 +13,7 @@ Boilerplate for using ES6 modules into a client-side executable code either w/ o
  - [ ] Give an opportunity to use `npm` modules on the client-side
  - [ ] Bundles should be able to be executed on the server-side (Node.js)
  - [ ] Think about including linter, CSS styles loader
+ - [ ] Include JS uglifier and CSS minifier
 
 # How to use
  - Run `npm run build` to create the initial modules bundle
