@@ -1,4 +1,5 @@
 const path = require( 'path' );
+const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const BUNDLE_EXT = '.bundle.js';
 
 const libraries_config = [
@@ -37,11 +38,16 @@ const bundles_config = {
       'singletons' : 'SK.Singletons',
       'sklibrary'  : 'sklibrary',
    },
+   plugins : [
+      new CleanWebpackPlugin( [ 'build/*.bundle.js*' ], {
+         root : __dirname,
+      }),
+   ],
 };
 
 const default_config = {
    mode   : process.env.NODE_ENV || 'development',
-   // devtool : 'source-map',
+   devtool : process.env.NODE_ENV != 'production' ? 'source-map' : '',
    watch : process.env.NODE_ENV != 'production',
    module : {
       rules : [
