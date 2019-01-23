@@ -1,6 +1,6 @@
 import React from 'react';
 import { add } from 'skcore';
-import { addm, x } from 'sklibrary';
+import { addm, x } from 'library1';
 import Wrapper from './../../components/Wrapper';
 import Text from './../../components/Text';
 import Image from './../../components/Image';

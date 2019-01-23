@@ -5,11 +5,13 @@ const BUNDLE_EXT = '.bundle.js';
 
 const libraries_config = [
    {
-      entry  :  './src/sklibrary.mjs',
+      entry  :  {
+         library1 : './src/sklibrary.mjs',
+      },
       output : {
-         filename       : `sklibrary${BUNDLE_EXT}`,
+         filename       : `SK.[name]${BUNDLE_EXT}`,
          path           : path.resolve( __dirname, 'build' ),
-         library        : 'sklibrary',
+         library        : [ 'SK', '[name]' ],
          libraryTarget  : 'window',    // make the library available to include only as a global window object with a <script> element
          umdNamedDefine : true,
       },
@@ -37,7 +39,7 @@ const bundles_config = {
       'skcore'     : 'SK.Core',
       'utils'      : 'SK.Util',
       'singletons' : 'SK.Singletons',
-      'sklibrary'  : 'sklibrary',
+      'library1'   : 'SK.library1',
    },
    plugins : [
       new CleanWebpackPlugin( [ 'build/*.bundle.js*' ], {
