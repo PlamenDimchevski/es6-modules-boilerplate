@@ -1,5 +1,5 @@
 const webpack_config = require( './webpack.config.js' );
-const BUNDLE_EXT = '.bundle.js';
+const BUNDLE_EXT = '.m.js';
 
 module.exports = ( grunt ) => {
    // Load NPM tasks

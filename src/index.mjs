@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Gallery from './elements/gallery';
 import Form from './elements/form';
 
-import( './elements/rte' ).then( ( { default : RTE } ) => {
+import( /* webpackChunkName: "dynamicRTE" */ './elements/rte' ).then( ( { default : RTE } ) => {
    SK.domreadypromise.then( () => {
       ReactDOM.render(
          React.createElement(

@@ -1,8 +1,9 @@
 import React from 'react';
+import './text_styles.css';
 
 const Text = ( props ) => {
    return (
-      <p>{ props.value }</p>
+      <p className="sk-text">{ props.value }</p>
    );
 };
 
